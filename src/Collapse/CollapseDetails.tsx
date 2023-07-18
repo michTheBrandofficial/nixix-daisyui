@@ -1,5 +1,4 @@
 import { classesFn, CollapseProps } from './Collapse'
-import { Summary } from './CollapseTitle'
 
 export type DetailsProps = Omit<
   CollapseProps<HTMLDetailsElement>,
@@ -7,7 +6,7 @@ export type DetailsProps = Omit<
 >
 const Details = 
   (
-    { children, icon, open, dataTheme, className, ...props }
+    { children, icon, open, dataTheme, className, ...props }: DetailsProps
   ): JSX.Element => {
     return (
       <details

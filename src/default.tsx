@@ -1,18 +1,24 @@
 import { render } from 'nixix/dom';
-import Accordion from './Accordion';
 import './index.css';
-import { CollapseContent, CollapseTitle } from './Collapse';
+import Select, { SelectOption } from './Select';
+import { callStore } from 'nixix/primitives';
+import { For } from 'nixix/hoc';
+import Button from './Button';
+
+const [array, setArray] = callStore<string[]>(['Iphone', 'Samsung', 'Tecno']);
 
 render(
   <div>
-    <Accordion icon="arrow" className="bg-base-300">
-      <CollapseTitle>Click to open</CollapseTitle>
-      <CollapseContent>Hellow</CollapseContent>
-    </Accordion>
-    <Accordion icon="arrow" className="bg-base-300">
-      <CollapseTitle>Click to open</CollapseTitle>
-      <CollapseContent>Hellow</CollapseContent>
-    </Accordion>
+    <For
+      each={array}
+      parent={<Select size="md" borderOffset color="primary"/>}
+      fallback={'Select'}
+    >
+      {(props: string[]) => {
+        return <SelectOption>{props}</SelectOption>;
+      }}
+    </For>
+    <Button tag='button' dataTheme='autumn' size='sm' active on:click={() => setArray(['Only Sam'])} >Click me</Button>
   </div>,
   document.body
 );
