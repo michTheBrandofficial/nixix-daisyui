@@ -11,9 +11,9 @@ export type AccordionProps = Omit<HTMLAttributes<HTMLInputElement>, 'type'> &
   };
 
 /**
- * ```jsx 
+ * ```jsx
  *  import { Accordion, CollapseTitle, CollapseContent } from 'nixix-daisyui';
- * 
+ *
  *  export default () => {
  *    return (
  *      <Accordion className="bg-base-400" icon="arrow" >
@@ -43,12 +43,11 @@ const Accordion = ({
   );
 
   return (
-    <div data-theme={dataTheme} className={classes}>
+    <div data-theme={dataTheme || ''} className={classes}>
       <input {...props} type="radio" name={name} />
       {children}
     </div>
   );
 };
-
 
 export default Accordion;

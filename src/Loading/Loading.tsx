@@ -46,7 +46,12 @@ const Loading = ({
   );
 
   return (
-    <span {...props} data-theme={dataTheme} className={classes} style={style || {}} />
+    <span
+      {...props}
+      data-theme={dataTheme || ''}
+      className={classes}
+      style={style || {}}
+    />
   );
 };
 

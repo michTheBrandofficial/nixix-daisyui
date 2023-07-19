@@ -15,6 +15,12 @@ export {
   SelectOptionProps,
 }
 
+// Actions > SearchSelect
+import SearchSelectOption, { type SearchSelectOptionProps, type SearchSelectProps } from "./SearchSelect";
+export { SearchSelectOption, SearchSelectOptionProps, SearchSelectProps }
+// props
+export {default as SearchSelect} from './SearchSelect';
+
 // Actions > Button 
 export { default as Button } from './Button';
 import { ButtonProps as TButtonProps } from './Button';

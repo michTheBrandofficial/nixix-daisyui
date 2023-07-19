@@ -4,7 +4,6 @@ import { twMerge } from 'tailwind-merge';
 
 import { ComponentBaseProps } from '../types';
 
-import CollapseDetails from './CollapseDetails';
 import { type NixixNode, type HTMLAttributes } from 'nixix';
 import { type FocusEvent } from 'nixix/types/eventhandlers';
 
@@ -17,8 +16,8 @@ export type CollapseProps<T extends HTMLElement = HTMLDivElement> =
       onOpen?: () => void;
       onClose?: () => void;
       onToggle?: () => void;
-      children?: NixixNode<any>
-    } ;
+      children?: NixixNode<any>;
+    };
 
 export const classesFn = ({
   className,
@@ -48,7 +47,7 @@ const Collapse = ({
   onToggle,
   ...props
 }: CollapseProps): JSX.Element => {
-  const [isChecked, setIsChecked] = callSignal(open === true ? 0 : undefined);
+  const [isChecked, setIsChecked] = callSignal(open === true ? 0 : 1);
   const checkboxRef = callRef<HTMLInputElement>(null);
 
   // Handle events for checkbox changes
@@ -84,7 +83,7 @@ const Collapse = ({
       aria:expanded={open}
       {...props}
       tabindex={isChecked}
-      data-theme={dataTheme}
+      data-theme={dataTheme || ''}
       className={classesFn({ className, icon, open })}
       on:blur={handleBlur}
       on:focus={handleFocus}
@@ -94,6 +93,7 @@ const Collapse = ({
           type="checkbox"
           tabindex={isChecked}
           className="peer"
+          bind:ref={checkboxRef}
           on:change={handleCheckboxChange}
         />
       )}
@@ -102,4 +102,4 @@ const Collapse = ({
   );
 };
 
-export default Collapse
+export default Collapse;

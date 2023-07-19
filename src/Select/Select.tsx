@@ -2,8 +2,7 @@ import clsx from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
 import { ComponentBaseProps, ComponentColor, ComponentSize } from '../types';
-import type { NixixNode,  SelectHTMLAttributes } from 'nixix';
-
+import type { NixixNode, SelectHTMLAttributes } from 'nixix';
 
 export type SelectProps = Omit<
   SelectHTMLAttributes<HTMLSelectElement>,
@@ -17,9 +16,7 @@ export type SelectProps = Omit<
     borderOffset?: boolean;
   };
 
-const Select = (
-  props: SelectProps
-): JSX.Element => {
+const Select = (props: SelectProps): JSX.Element => {
   const {
     children,
     size,
@@ -53,10 +50,10 @@ const Select = (
   );
 
   return (
-    <select {...rest} data-theme={dataTheme} className={classes}>
+    <select {...rest} data-theme={dataTheme || ''} className={classes}>
       {children}
     </select>
   );
 };
 
-export default Select
+export default Select;

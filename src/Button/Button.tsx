@@ -17,7 +17,6 @@ import type {
   LabelHTMLAttributes,
   NixixNode,
 } from 'nixix';
-import Nix from 'nixix/dom';
 
 type TagProps = {
   a: {
@@ -152,9 +151,9 @@ const Button = ({
     return (
       <Tag
         className={classes}
-        style={style||{}}
+        style={style || {}}
         {...props}
-        data-theme={dataTheme}
+        data-theme={dataTheme || ''}
       >
         {children}
       </Tag>
@@ -163,9 +162,9 @@ const Button = ({
     return (
       <Tag
         className={classes}
-        style={style||{}}
+        style={style || {}}
         {...props}
-        data-theme={dataTheme}
+        data-theme={dataTheme || ''}
       >
         {!startIcon && loading && <Loading size={size} />}
         {startIcon && !loading && startIcon}

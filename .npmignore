@@ -1,0 +1,6 @@
+./src/default.tsx
+declarations.d.ts 
+index.html
+postcss.config.js 
+tailwind.config.js 
+vite.config.js
