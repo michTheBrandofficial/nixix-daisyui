@@ -12,7 +12,7 @@ export type AccordionProps = Omit<HTMLAttributes<HTMLInputElement>, 'type'> &
 
 /**
  * ```jsx
- *  import { Accordion, CollapseTitle, CollapseContent } from 'nixix-daisyui';
+ *  import { Accordion, CollapseTitle, CollapseContent } from 'daisyui-nixix';
  *
  *  export default () => {
  *    return (

@@ -1,6 +1,8 @@
-./src/default.tsx
+def-src/
+src/default.tsx
 declarations.d.ts 
 index.html
 postcss.config.js 
 tailwind.config.js 
 vite.config.js
+node_modules

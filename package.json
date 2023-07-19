@@ -1,5 +1,5 @@
 {
-  "name": "nixix-daisyui",
+  "name": "daisyui-nixix",
   "version": "0.0.1",
   "description": "DaisyUI component Library for NixixJS",
   "main": "./src/index.js",
