@@ -16,18 +16,14 @@ const CollapseTitle = ({
 }: CollapseTitleProps): JSX.Element => {
   return (
     <div {...props} className={classesFn({ className })}>
-      {children}
+      {...children}
     </div>
   );
 };
 
 export type SummaryProps = CollapseTitleProps<HTMLElement>;
 export const Summary = ({ children, className }, ref): JSX.Element => {
-  return (
-    <summary className={classesFn({ className })}>
-      {children}
-    </summary>
-  );
+  return <summary className={classesFn({ className })}>{...children}</summary>;
 };
 
 export default CollapseTitle;

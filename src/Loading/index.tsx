@@ -1,3 +1,5 @@
-import Loading, { LoadingProps as TLoadingProps } from './Loading'
-export type LoadingProps = TLoadingProps
+import Loading, { type LoadingProps } from './Loading'
 export default Loading
+export {
+  LoadingProps
+}

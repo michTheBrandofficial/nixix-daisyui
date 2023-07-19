@@ -15,7 +15,7 @@ const CollapseContent = ({
 
   return (
     <div {...props} className={classes}>
-      {children}
+      {...children}
     </div>
   );
 };

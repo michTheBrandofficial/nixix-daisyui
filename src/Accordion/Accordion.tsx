@@ -45,7 +45,7 @@ const Accordion = ({
   return (
     <div data-theme={dataTheme || ''} className={classes}>
       <input {...props} type="radio" name={name} />
-      {children}
+      {...children}
     </div>
   );
 };

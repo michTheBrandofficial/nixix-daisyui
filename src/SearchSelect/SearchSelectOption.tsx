@@ -11,24 +11,30 @@ export type SearchSelectOptionProps = {
 } & OptionHTMLAttributes<HTMLOptionElement>;
 
 const SearchSelectOption = (props: SearchSelectOptionProps) => {
-  const { children, hoverBg = 'hover:bg-gray-50', size = 'md', className, ...rest } = props;
+  const {
+    children,
+    hoverBg = 'hover:bg-gray-50',
+    size = 'md',
+    className,
+    ...rest
+  } = props;
   return (
     <option
       role="option"
       className={twMerge(
-        'cursor-pointer pl-4 py-2 border-gray-300 ',
+        'cursor-pointer rounded-[inherit] pl-4 py-2 border-gray-300 ',
         clsx({
           [hoverBg]: true,
           'text-sm': size === 'sm',
           'text-xs': size === 'xs',
           'text-md': size === 'md',
-          'text-lg': size === 'lg'
+          'text-lg': size === 'lg',
         }),
         className || ''
       )}
       {...rest}
     >
-      {children}
+      {...children}
     </option>
   );
 };

@@ -1,8 +1,8 @@
-import Select, { SelectProps as TSelectProps } from './Select'
+import Select, { type SelectProps } from './Select'
 import SelectOption, { type SelectOptionProps } from './SelectOption'
-export type SelectProps = TSelectProps
 export {
   SelectOption,
-  SelectOptionProps
+  SelectOptionProps,
+  SelectProps
 }
 export default Select

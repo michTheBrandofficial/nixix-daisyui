@@ -97,7 +97,7 @@ const Collapse = ({
           on:change={handleCheckboxChange}
         />
       )}
-      {children}
+      {...children}
     </div>
   );
 };

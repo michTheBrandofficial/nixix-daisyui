@@ -26,7 +26,7 @@ const SearchSelect = (props: SearchSelectProps) => {
     children,
     dataTheme,
     value,
-    size,
+    size = 'md',
     color,
     ...rest
   } = props;
@@ -112,18 +112,18 @@ const SearchSelect = (props: SearchSelectProps) => {
           }))}
           name="input"
           on:keyup={search}
-          value={value||'name'}
+          value={value||''}
           {...rest}
         />
         <i className="chevron" bind:ref={refs.chevron} ></i>
       </div>
       <div
-        className=" mt-[4px] absolute top-10 z-[1000] w-full border border-gray-100 dark:border-gray-300 shadow-md rounded-[.6rem] "
+        className="hidden mt-[4px] absolute top-10 z-[1000] w-full border border-gray-100 dark:border-gray-300 shadow-md rounded-[.6rem] "
         data-theme={dataTheme || ''}
         bind:ref={refs.options}
       >
         <ul className="options max-h-[250px] overflow-y-auto p-0  ">
-          {children}
+          {...children}
         </ul>
       </div>
     </div>

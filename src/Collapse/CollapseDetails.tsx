@@ -19,7 +19,7 @@ const Details = ({
       className={classesFn({ className, icon, open })}
       open={open}
     >
-      {children}
+      {...children}
     </details>
   );
 };

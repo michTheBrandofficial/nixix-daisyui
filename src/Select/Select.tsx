@@ -51,7 +51,7 @@ const Select = (props: SelectProps): JSX.Element => {
 
   return (
     <select {...rest} data-theme={dataTheme || ''} className={classes}>
-      {children}
+      {...children}
     </select>
   );
 };

@@ -155,7 +155,7 @@ const Button = ({
         {...props}
         data-theme={dataTheme || ''}
       >
-        {children}
+        {...children}
       </Tag>
     );
   } else {
@@ -168,7 +168,7 @@ const Button = ({
       >
         {!startIcon && loading && <Loading size={size} />}
         {startIcon && !loading && startIcon}
-        {children}
+        {...children}
         {endIcon && endIcon}
       </Tag>
     );
