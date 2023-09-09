@@ -4,13 +4,13 @@ import Button from './Button';
 import Collapse, { CollapseContent, CollapseTitle } from './Collapse';
 import Accordion from './Accordion';
 import SearchSelect, { SearchSelectOption } from './SearchSelect';
+import Skeleton from './Skeleton';
 
 export const Test = () => {
   return (
-    <Accordion icon='arrow' dataTheme='dark' >
-      <CollapseTitle >Click me to see hello</CollapseTitle>
-      <CollapseContent>Hello World</CollapseContent>
-    </Accordion>
+    <div>
+      <Skeleton size={'xl'} on:click={() => console.log('object')} />
+    </div>
   );
 };
 

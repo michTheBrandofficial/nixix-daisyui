@@ -50,3 +50,10 @@ export {
   LoadingProps
 }
 
+// Data Display > Skeleton 
+import Skeleton, { type SkeletonProps } from './Skeleton'
+export {
+  Skeleton,
+  SkeletonProps
+}
+

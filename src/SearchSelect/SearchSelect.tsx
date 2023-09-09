@@ -25,6 +25,7 @@ const SearchSelect = (props: SearchSelectProps) => {
     placeholder,
     children,
     dataTheme,
+    className,
     value,
     size = 'md',
     color,
@@ -92,7 +93,7 @@ const SearchSelect = (props: SearchSelectProps) => {
         <input
           type="text"
           placeholder={placeholder}
-          className={twMerge('input focus:outline-blue-300 ', clsx({
+          className={twMerge(className, 'input focus:outline-blue-300 ', clsx({
             'input': true,
             'input-bordered': true,
             'input-ghost': color === 'ghost',
