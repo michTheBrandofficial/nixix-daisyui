@@ -20,6 +20,7 @@ export interface SearchSelectProps
   value?: string;
   size?: ComponentSize;
   color?: ComponentColor;
+  onvaluechange?: (e: string) => void;
 }
 
 function getSize(size: ComponentSize) {
@@ -56,6 +57,7 @@ function getColor(color: ComponentColor) {
 
 const SearchSelect = (props: SearchSelectProps) => {
   const {
+    onvaluechange,
     placeholder,
     children,
     dataTheme,
@@ -63,6 +65,7 @@ const SearchSelect = (props: SearchSelectProps) => {
     value,
     size = 'md',
     color,
+    name,
     ...rest
   } = props;
   const [optValue, setOptValue] = callSignal<string>(value || '');
@@ -85,8 +88,10 @@ const SearchSelect = (props: SearchSelectProps) => {
     });
   }
   function selectOpt(e: MouseEvent<HTMLOptionElement>) {
-    setOptValue(e.currentTarget.value);
+    const newOptValue = e.currentTarget.value;
+    setOptValue(newOptValue);
     setOptDisplay();
+    onvaluechange?.(newOptValue);
   }
   function handleKeyUp(e: KeyboardEvent<HTMLInputElement>) {
     const KEY_MAP = {
@@ -134,7 +139,7 @@ const SearchSelect = (props: SearchSelectProps) => {
             'input focus:outline-blue-300 ',
             getColor(color)
           )}
-          name="input"
+          name={name}
           on:keyup={handleKeyUp}
           on:focus={setOptDisplay}
           value={optValue}
