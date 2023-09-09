@@ -4,7 +4,7 @@ import { ComponentSize } from '../types';
 import { twMerge } from 'tailwind-merge';
 
 export type SearchSelectOptionProps = {
-  children?: NixixNode<any>;
+  children?: NixixNode;
   className?: string;
   hoverBg?: string;
   size?: ComponentSize;
@@ -20,9 +20,10 @@ const SearchSelectOption = (props: SearchSelectOptionProps) => {
   } = props;
   return (
     <option
-      role="option"
+      role="button"
+      tabindex={0}
       className={twMerge(
-        'cursor-pointer rounded-[inherit] pl-4 py-2 border-gray-300 ',
+        'cursor-pointer focus:bg-gray-50 rounded-[inherit] pl-4 py-2 border-gray-300 ',
         clsx({
           [hoverBg]: true,
           'text-sm': size === 'sm',

@@ -1,17 +1,17 @@
 import { render } from 'nixix/dom';
 import './index.css';
-import Button from './Button';
-import Collapse, { CollapseContent, CollapseTitle } from './Collapse';
-import Accordion from './Accordion';
-import SearchSelect, { SearchSelectOption } from './SearchSelect';
 import Skeleton from './Skeleton';
+import SearchSelect, { SearchSelectOption } from './SearchSelect';
 
 export const Test = () => {
   return (
     <div>
       <Skeleton size={'xl'} on:click={() => console.log('object')} />
+      <SearchSelect placeholder={'Search'} size="md">
+        <SearchSelectOption value={'option'}>Iphone</SearchSelectOption>
+      </SearchSelect>
     </div>
   );
 };
 
-render(<Test></Test>, document.body);
+render(<Test />, document.body);
