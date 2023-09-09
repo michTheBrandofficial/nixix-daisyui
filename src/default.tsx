@@ -6,9 +6,11 @@ import SearchSelect, { SearchSelectOption } from './SearchSelect';
 export const Test = () => {
   return (
     <div>
-      <Skeleton size={'xl'} on:click={() => console.log('object')} />
+      <Skeleton size={'lg'} className={'mb-4'} />
       <SearchSelect placeholder={'Search'} size="md">
-        <SearchSelectOption value={'option'}>Iphone</SearchSelectOption>
+        <SearchSelectOption value={'Iphone'}>Iphone</SearchSelectOption>
+        <SearchSelectOption value={'Samsung'}>Samsung</SearchSelectOption>
+        <SearchSelectOption value={'nokia'}>Nokia</SearchSelectOption>
       </SearchSelect>
     </div>
   );

@@ -18,12 +18,23 @@ const SearchSelectOption = (props: SearchSelectOptionProps) => {
     className,
     ...rest
   } = props;
+
+  const KEYCODE_MAP = {
+    Enter: (e: HTMLOptionElement) => {
+      e.click();
+    },
+  };
   return (
     <option
-      role="button"
+      role="option"
       tabindex={0}
+      on:keydown={(e) => {
+        // KEYCODE_MAP keys can be enter, arrowdown or arrowup
+        const keyCode = KEYCODE_MAP[e.key];
+        return keyCode ? keyCode(e.currentTarget) : null;
+      }}
       className={twMerge(
-        'cursor-pointer focus:bg-gray-50 rounded-[inherit] pl-4 py-2 border-gray-300 ',
+        'cursor-pointer focus:bg-gray-100 focus:outline-none first:rounded-t-[inherit] pl-4 py-2 border-gray-300 ',
         clsx({
           [hoverBg]: true,
           'text-sm': size === 'sm',
