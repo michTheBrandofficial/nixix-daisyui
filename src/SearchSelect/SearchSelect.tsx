@@ -101,6 +101,9 @@ const SearchSelect = (props: SearchSelectProps) => {
       Enter: () => {
         setOptDisplay();
       },
+      ArrowDown: () => {
+        options.current.querySelector('option').focus();
+      },
     };
     if (KEY_MAP[e.key]) return KEY_MAP[e.key]();
 

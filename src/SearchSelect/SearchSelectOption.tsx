@@ -21,14 +21,21 @@ const SearchSelectOption = (props: SearchSelectOptionProps) => {
 
   const KEYCODE_MAP = {
     Enter: (e: HTMLOptionElement) => {
+      console.log('enter pressed');
       e.click();
+    },
+    ArrowDown: (e: HTMLOptionElement) => {
+      (e.nextElementSibling as typeof e)?.focus();
+    },
+    ArrowUp: (e: HTMLOptionElement) => {
+      (e.previousElementSibling as typeof e)?.focus();
     },
   };
   return (
     <option
       role="option"
       tabindex={0}
-      on:keydown={(e) => {
+      on:keyup={(e) => {
         // KEYCODE_MAP keys can be enter, arrowdown or arrowup
         const keyCode = KEYCODE_MAP[e.key];
         return keyCode ? keyCode(e.currentTarget) : null;

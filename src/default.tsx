@@ -10,6 +10,7 @@ export const Test = () => {
       <SearchSelect placeholder={'Search'} size="md">
         <SearchSelectOption value={'Iphone'}>Iphone</SearchSelectOption>
         <SearchSelectOption value={'Samsung'}>Samsung</SearchSelectOption>
+        <SearchSelectOption value={'Sany'}>Sany</SearchSelectOption>
         <SearchSelectOption value={'nokia'}>Nokia</SearchSelectOption>
       </SearchSelect>
     </div>
