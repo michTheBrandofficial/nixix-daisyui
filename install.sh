@@ -1,1 +1,1 @@
-npm i nixix
+code ../notes-app 

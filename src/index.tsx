@@ -2,37 +2,44 @@
 
 // Actions > Accordion
 import Accordion, { type AccordionProps } from './Accordion';
-export { Accordion, AccordionProps }
+export { Accordion, AccordionProps };
 
-// Actions > Select 
-import Select, { SelectOption, type SelectOptionProps, type SelectProps } from './Select';
-export {
-  Select,
+// Actions > Select
+import Select, {
   SelectOption,
-  SelectOptionProps,
-  SelectProps
-}
+  type SelectOptionProps,
+  type SelectProps,
+} from './Select';
+export { Select, SelectOption, SelectOptionProps, SelectProps };
 
 // Actions > SearchSelect
-import SearchSelect, { SearchSelectOption, type SearchSelectOptionProps, type SearchSelectProps } from './SearchSelect';
+import SearchSelect, {
+  SearchSelectOption,
+  type SearchSelectOptionProps,
+  type SearchSelectProps,
+} from './SearchSelect';
 export {
-  SearchSelect, 
+  SearchSelect,
   SearchSelectOptionProps,
   SearchSelectOption,
-  SearchSelectProps
-}
+  SearchSelectProps,
+};
 
-// Actions > Button 
+// Actions > Button
 import Button, { type ButtonProps } from './Button';
-export {
-  Button,
-  ButtonProps
-}
+export { Button, ButtonProps };
 
 // <----------- Data Display ----------->
 
 // Data Display > Collapse
-import Collapse, { type CollapseProps, CollapseContent, type CollapseContentProps, CollapseDetails, CollapseTitle, type CollapseTitleProps } from './Collapse'
+import Collapse, {
+  type CollapseProps,
+  CollapseContent,
+  type CollapseContentProps,
+  CollapseDetails,
+  CollapseTitle,
+  type CollapseTitleProps,
+} from './Collapse';
 export {
   CollapseContent,
   CollapseContentProps,
@@ -40,20 +47,17 @@ export {
   CollapseTitle,
   CollapseTitleProps,
   Collapse,
-  CollapseProps
-}
+  CollapseProps,
+};
 
-// Data Display > Loading 
-import Loading, { type LoadingProps } from './Loading'
-export {
-  Loading,
-  LoadingProps
-}
+// Data Display > Loading
+import Loading, { type LoadingProps } from './Loading';
+export { Loading, LoadingProps };
 
-// Data Display > Skeleton 
-import Skeleton, { type SkeletonProps } from './Skeleton'
-export {
-  Skeleton,
-  SkeletonProps
-}
+// Data Display > Skeleton
+import Skeleton, { type SkeletonProps } from './Skeleton';
+export { Skeleton, SkeletonProps };
 
+// Data Display > Theme
+import Theme, { type ThemeProps } from './Theme';
+export { Theme, ThemeProps };

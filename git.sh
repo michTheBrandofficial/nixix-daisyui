@@ -1,3 +1,3 @@
 git add .
-git commit -m "[fixed] The bug of not being able to select option when you search for options."
+git commit -m "[updated] Select component, Theme component and the Skeleton component."
 git push -u origin main 

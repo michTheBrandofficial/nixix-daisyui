@@ -3,13 +3,14 @@ import { twMerge } from 'tailwind-merge';
 
 import { ComponentBaseProps, ComponentColor, ComponentSize } from '../types';
 import type { NixixNode, SelectHTMLAttributes } from 'nixix';
+import { KeyboardEvent } from 'nixix/types/eventhandlers';
 
 export type SelectProps = Omit<
   SelectHTMLAttributes<HTMLSelectElement>,
   'size' | 'color'
 > &
   ComponentBaseProps & {
-    children?: NixixNode<any>;
+    children?: NixixNode;
     size?: ComponentSize;
     color?: ComponentColor;
     bordered?: boolean;
@@ -50,7 +51,7 @@ const Select = (props: SelectProps): JSX.Element => {
   );
 
   return (
-    <select {...rest} data-theme={dataTheme || ''} className={classes}>
+    <select {...rest} className={classes}>
       {...children}
     </select>
   );
