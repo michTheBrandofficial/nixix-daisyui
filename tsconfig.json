@@ -1,20 +1,25 @@
 {
   "compilerOptions": {
-    "paths": {},
+    "paths": {
+      "@/*": [
+        "./*"
+      ],
+    },
     "resolveJsonModule": true,
     "baseUrl": ".",
     "jsx": "react-jsxdev",
     "jsxImportSource": "nixix/types",
     "module": "es2022",
     "target": "es2022",
+    "strict": true,
     "types": [
-      "nixix/dom",
-      "nixix/hoc",
       "nixix/router",
-      "nixix/primitives"
+      "nixix/dom",
+      "nixix/primitives",
+      "nixix/hoc",
+      "nixix/view-components",
     ],
-    "checkJs": true,
     "allowSyntheticDefaultImports": true,
-    "moduleResolution": "node"
+    "moduleResolution": "Bundler"
   }
 }

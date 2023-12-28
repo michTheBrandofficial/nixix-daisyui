@@ -53,7 +53,7 @@ const SearchSelectOption = (props: SearchSelectOptionProps) => {
       )}
       {...rest}
     >
-      {...children}
+      {children}
     </option>
   );
 };

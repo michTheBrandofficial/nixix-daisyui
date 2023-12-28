@@ -3,4 +3,5 @@ dist
 firebase.json
 .firebaserc
 def-src/
-git.sh
+*.sh
+*.ps1
