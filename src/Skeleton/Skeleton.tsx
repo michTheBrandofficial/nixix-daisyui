@@ -22,7 +22,7 @@ function getRounded(size: SkeletonProps['size'], rounded: boolean) {
   });
 }
 
-const Skeleton = (props: SkeletonProps) => {
+const Skeleton = (props: SkeletonProps): someView => {
   const {
     size = 'xs',
     width = 150,

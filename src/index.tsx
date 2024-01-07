@@ -1,63 +1,36 @@
 // <------------- Actions ------------>
 
 // Actions > Accordion
-import Accordion, { type AccordionProps } from './Accordion';
-export { Accordion, AccordionProps };
+export { default as Accordion, type AccordionProps } from './Accordion';
 
 // Actions > Select
-import Select, {
-  SelectOption,
-  type SelectOptionProps,
-  type SelectProps,
-} from './Select';
-export { Select, SelectOption, SelectOptionProps, SelectProps };
+export { default as Select, type SelectProps, type SelectOptionProps } from './Select';
 
 // Actions > SearchSelect
-import SearchSelect, {
-  SearchSelectOption,
-  type SearchSelectOptionProps,
-  type SearchSelectProps,
-} from './SearchSelect';
-export {
-  SearchSelect,
-  SearchSelectOptionProps,
-  SearchSelectOption,
-  SearchSelectProps,
-};
+export { default as SearchSelect, type SearchSelectProps, type SearchSelectOptionProps  } from './SearchSelect';
 
 // Actions > Button
-import Button, { type ButtonProps } from './Button';
-export { Button, ButtonProps };
+export { default as Button, type ButtonProps } from './Button';
 
 // <----------- Data Display ----------->
 
 // Data Display > Collapse
-import Collapse, {
-  type CollapseProps,
-  CollapseContent,
-  type CollapseContentProps,
-  CollapseDetails,
-  CollapseTitle,
-  type CollapseTitleProps,
-} from './Collapse';
-export {
-  CollapseContent,
-  CollapseContentProps,
-  CollapseDetails,
-  CollapseTitle,
-  CollapseTitleProps,
-  Collapse,
-  CollapseProps,
-};
+export { default as Collapse, type CollapseProps } from './Collapse';
 
 // Data Display > Loading
-import Loading, { type LoadingProps } from './Loading';
-export { Loading, LoadingProps };
+export { default as Loading, type LoadingProps } from './Loading';
 
 // Data Display > Skeleton
-import Skeleton, { type SkeletonProps } from './Skeleton';
-export { Skeleton, SkeletonProps };
+export { default as Skeleton, type SkeletonProps } from './Skeleton'
 
 // Data Display > Theme
-import Theme, { type ThemeProps } from './Theme';
-export { Theme, ThemeProps };
+export { default as Theme, type ThemeProps } from './Theme';
+
+// Data Display > Rating
+export { default as Rating, type RatingProps } from './Rating';
+
+// Data Display > Toast
+export { default as Toast, type ToastProps } from './Toast';
+
+// Data Display > Alert
+export { default as Alert, type AlertProps } from './Alert';

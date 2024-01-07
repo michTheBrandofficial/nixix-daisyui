@@ -1,13 +1,16 @@
-import clsx from 'clsx';
-import { twMerge } from 'tailwind-merge';
-import { type HTMLAttributes } from 'nixix';
+import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
+import { type InputHTMLAttributes } from "nixix";
 
-import { ComponentBaseProps } from '../types';
+import { ComponentBaseProps } from "../types";
 
-export type AccordionProps = Omit<HTMLAttributes<HTMLInputElement>, 'type'> &
+export type AccordionProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  "type"
+> &
   ComponentBaseProps & {
     name?: string;
-    icon?: 'arrow' | 'plus';
+    icon?: "arrow" | "plus";
   };
 
 /**
@@ -26,27 +29,31 @@ export type AccordionProps = Omit<HTMLAttributes<HTMLInputElement>, 'type'> &
  * ```
  */
 const Accordion = ({
-  name = 'accordion',
-  icon,
-  dataTheme,
+  name = "accordion",
+  icon = "arrow",
+  "data:theme": dataTheme,
   className,
   children,
   ...props
-}: AccordionProps): JSX.Element => {
+}: AccordionProps): someView => {
   const classes = twMerge(
-    'collapse',
+    "collapse",
     clsx({
-      'collapse-arrow': icon === 'arrow',
-      'collapse-plus': icon === 'plus',
+      "collapse-arrow": icon === "arrow",
+      "collapse-plus": icon === "plus",
     }),
     className
   );
 
   return (
-    <div className={classes}>
-      <input {...props} type="radio" name={name} />
-      {...children}
-    </div>
+    <section className={classes}>
+      <input
+        {...props}
+        type='radio'
+        name={name}
+      />
+      {children}
+    </section>
   );
 };
 

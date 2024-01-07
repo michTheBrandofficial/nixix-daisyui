@@ -12,7 +12,7 @@ import { DEFAULT_THEMES } from './defaultThemes';
 export type DataTheme = DEFAULT_THEMES | (string & {});
 
 export interface ComponentBaseProps {
-  dataTheme?: DataTheme;
+  'data:theme'?: DataTheme;
 }
 
 export type ComponentColor = (typeof componentColors)[number];

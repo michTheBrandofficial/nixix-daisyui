@@ -11,7 +11,4 @@ export default defineConfig({
     },
   },
   esbuild: esbuildOptions,
-  optimizeDeps: {
-    force: true
-  }
 });

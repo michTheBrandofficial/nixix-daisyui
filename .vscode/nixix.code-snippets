@@ -82,5 +82,9 @@
     "body": "<For each={${1:storeArray}} parent={${2:<div />}} fallback={${3:fallback}}>\n\t{\n\t\t(${4:props}) => {\n\t\t\treturn (\n\t\t\t\t${5:<div />}\n\t\t\t)\n\t\t}\n\t}\n</For>",
     "scope": "typescriptreact,javascriptreact",
     "description": "For Component"
+  },
+  "barrelExport": {
+    "prefix": "bare",
+    "body": "export { default as ${TM_SELECTED_TEXT}, type ${TM_SELECTED_TEXT}Props } from './${TM_SELECTED_TEXT}';"
   }
 }

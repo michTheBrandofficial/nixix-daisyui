@@ -1,20 +1,21 @@
 import { render } from "nixix/dom";
 import "./index.css";
-import Theme from "./Theme";
-import SearchSelect, { SearchSelectOption } from "./SearchSelect";
+import { Theme, Rating, Toast, Alert } from ".";
+import { DynamicAlerts } from "./Toast/Toast.stories";
+import { Primitive } from "nixix/primitives";
 
 const View = (): someView => {
   return (
-    <Theme
-      dataTheme='dark'
-      className={"w-full h-full flex items-center justify-center"}>
-      <SearchSelect
-        placeholder='Yeah'
-        value={"name"}>
-        <SearchSelectOption value={"Iphone"}>Iphone</SearchSelectOption>
-        <SearchSelectOption value={"Samsung"}>Samsung</SearchSelectOption>
-      </SearchSelect>
-    </Theme>
+    <>
+      {/* <Rating value={0}>
+        <Rating.Item className={'bg-green-900 mask mask-star-2'} readonly />
+        <Rating.Item className={'bg-green-800 mask mask-star-2'} readonly />
+        <Rating.Item className={'bg-green-700 mask mask-star-2'} readonly />
+        <Rating.Item className={'bg-green-600 mask mask-star-2'} readonly />
+        <Rating.Item className={'bg-green-500 mask mask-star-2'} readonly />
+      </Rating> */}
+      <DynamicAlerts />
+    </>
   );
 };
 

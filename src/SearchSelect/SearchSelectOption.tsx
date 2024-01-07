@@ -10,9 +10,10 @@ export type SearchSelectOptionProps = {
   size?: ComponentSize;
 } & OptionHTMLAttributes<HTMLOptionElement>;
 
-const SearchSelectOption = (props: SearchSelectOptionProps) => {
+const SearchSelectOption = (props: SearchSelectOptionProps): someView => {
   const {
     children,
+    value,
     hoverBg = 'hover:bg-gray-50',
     size = 'md',
     className,
@@ -37,7 +38,7 @@ const SearchSelectOption = (props: SearchSelectOptionProps) => {
       tabindex={0}
       on:keyup={(e) => {
         // KEYCODE_MAP keys can be enter, arrowdown or arrowup
-        const keyCode = KEYCODE_MAP[e.key];
+        const keyCode = KEYCODE_MAP[e.key as keyof typeof KEYCODE_MAP];
         return keyCode ? keyCode(e.currentTarget) : null;
       }}
       className={twMerge(
@@ -49,11 +50,11 @@ const SearchSelectOption = (props: SearchSelectOptionProps) => {
           'text-md': size === 'md',
           'text-lg': size === 'lg',
         }),
-        className || ''
+        className
       )}
       {...rest}
     >
-      {children}
+      {children || value || ''}
     </option>
   );
 };

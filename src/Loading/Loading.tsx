@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 import { ComponentBaseProps, ComponentColor, ComponentSize } from '../types';
 import { type HTMLAttributes } from 'nixix';
 
-export type LoadingProps = HTMLAttributes<HTMLSpanElement> &
+export type LoadingProps = HTMLAttributes<HTMLDivElement> &
   ComponentBaseProps & {
     size?: ComponentSize;
     color?: ComponentColor;
@@ -15,11 +15,11 @@ const Loading = ({
   size,
   variant = 'spinner',
   color,
-  dataTheme,
+"data:theme":  dataTheme,
   className,
   style,
   ...props
-}: LoadingProps): JSX.Element => {
+}: LoadingProps): someView => {
   const classes = twMerge(
     'loading',
     className,
@@ -46,7 +46,7 @@ const Loading = ({
   );
 
   return (
-    <span
+    <div
       {...props}
       data-theme={dataTheme || ''}
       className={classes}

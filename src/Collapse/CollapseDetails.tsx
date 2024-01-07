@@ -8,10 +8,10 @@ const Details = ({
   children,
   icon,
   open,
-  dataTheme,
+"data:theme":  dataTheme,
   className,
   ...props
-}: DetailsProps): JSX.Element => {
+}: DetailsProps): someView => {
   return (
     <details
       {...props}
@@ -19,7 +19,7 @@ const Details = ({
       className={classesFn({ className, icon, open })}
       open={open}
     >
-      {...children}
+      {children}
     </details>
   );
 };

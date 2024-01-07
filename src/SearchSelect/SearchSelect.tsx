@@ -10,6 +10,8 @@ import type { InputHTMLAttributes } from "nixix";
 import { callEffect, callRef, signal, store } from "nixix/primitives";
 import type { KeyboardEvent, MouseEvent } from "nixix/types/eventhandlers";
 import "./SearchSelect.css";
+import { assign } from "../utils";
+import SearchSelectOption from "./SearchSelectOption";
 
 export type SearchSelectProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
@@ -57,12 +59,12 @@ function getColor(color: ComponentColor) {
   });
 }
 
-const SearchSelect = (props: SearchSelectProps) => {
+const SearchSelect = (props: SearchSelectProps): someView => {
   const {
     "on:valuechange": onvaluechange,
     placeholder,
     children,
-    dataTheme,
+  "data:theme":  dataTheme,
     className,
     value,
     size = "md",
@@ -77,7 +79,6 @@ const SearchSelect = (props: SearchSelectProps) => {
   });
   const options = callRef<HTMLDivElement>();
 
-  console.log(optionDisplay);
   function setOptDisplay() {
     setOptionDisplay((e) => {
       const { chevronDisplay, ulDisplay } = e;
@@ -146,7 +147,7 @@ const SearchSelect = (props: SearchSelectProps) => {
             "input focus:outline-blue-300 ",
             getColor(color!)
           )}
-          name={name}
+          name={name || ''}
           on:keyup={handleKeyUp}
           on:focus={setOptDisplay}
           value={optValue}
@@ -167,4 +168,6 @@ const SearchSelect = (props: SearchSelectProps) => {
   );
 };
 
-export default SearchSelect;
+export default assign(SearchSelect, {
+  Option: SearchSelectOption
+});

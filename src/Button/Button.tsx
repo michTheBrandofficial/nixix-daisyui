@@ -56,7 +56,7 @@ type GetTagProps<T> = T extends keyof TagProps
 export type ButtonProps<
   T = keyof TagProps,
   A extends HTMLAttributes<HTMLElement> = GetTagProps<T>['attr']
-> = Omit<A, 'color' | 'size'> &
+> = Omit<A, 'color'> &
   ComponentBaseProps & {
     shape?: ComponentShape;
     size?: ComponentSize;
@@ -69,8 +69,8 @@ export type ButtonProps<
     animation?: boolean;
     loading?: boolean;
     active?: boolean;
-    startIcon?: NixixNode<any>;
-    endIcon?: NixixNode<any>;
+    startIcon?: NixixNode;
+    endIcon?: NixixNode;
     disabled?: boolean;
     tag: T;
   };
@@ -110,12 +110,12 @@ const Button = ({
   loading,
   active,
   disabled,
-  dataTheme,
+  "data:theme": dataTheme,
   className,
   style,
   tag,
   ...props
-}: ButtonProps): JSX.Element => {
+}: ButtonProps): someView => {
   const Tag = tag as unknown as (props?: any) => JSX.Element;
   const classes = twMerge(
     'btn',
@@ -155,7 +155,7 @@ const Button = ({
         {...props}
         data-theme={dataTheme || ''}
       >
-        {...children}
+        {children}
       </Tag>
     );
   } else {
@@ -168,7 +168,7 @@ const Button = ({
       >
         {!startIcon && loading && <Loading size={size} />}
         {startIcon && !loading && startIcon}
-        {...children}
+        {children}
         {endIcon && endIcon}
       </Tag>
     );
